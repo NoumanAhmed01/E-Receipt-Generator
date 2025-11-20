@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .receipt-container {
+    @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 max-w-md mx-auto;
+  }
+  
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md transition-colors duration-200 flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors duration-200 flex items-center gap-2;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .receipt-container {
+    box-shadow: none;
+    max-width: none;
+    margin: 0;
+  }
+}
